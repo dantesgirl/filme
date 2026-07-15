@@ -1,0 +1,79 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+.dica {
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+#click:hover + .dica {
+    display: block;
+}
+
+#click {
+    width: 300px;
+    cursor: pointer;
+}
+
+.carossel{
+    display: none;
+    width: 400px;
+    border-radius: 15px;
+    height: 300px;
+    background-color: whitesmoke;
+}
+
+.borda{
+    height: 50px;
+    background-color: rgb(117,111,111);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.teste{
+    color: black;
+    font-family: 'UnifrakturMaguntia', cursive;
+    position: absolute;
+    font-size: 30px;
+
+}
+
+.filmes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+#imagem{
+    width: 220px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.7);
+}
+
+button{
+    font-size: 30px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}

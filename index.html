@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Carrossel de Filmes</title>
+    <link rel="stylesheet" href="CSS\estlio.css">
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="div_zero" id="zero">
+        <img src="Imagens/download (3).jpg" id="click" onclick="mostrarAntes()">
+        <span class="dica">clica no morcego</span>
+    </div>
+
+    <div class="carossel" id="segundo">
+        <div class="borda">
+        <div class="teste" id="titulo">Filme pra ver</div>
+        </div>
+        <div class="filmes">
+            <button onclick="anterior()">🗡</button>
+            <img id="imagem" src="Imagens/foto.jpg" alt="">
+            <button onclick="proximo()">🗡</button>
+        </div>
+    </div>
+
+    <script>
+        function mostrarAntes(){
+            var tela0 = document.getElementById("zero");
+            var tela2 = document.getElementById("segundo");
+
+            tela0.style.display = "none";
+            tela2.style.display = "block";
+
+            document.body.style.backgroundImage = "url('Imagens/dark.jpg')";
+            document.body.style.backgroundSize = "cover";
+        }
+
+        const filmes = [
+            {
+            titulo: "Obsessão",
+            imagem: "Imagens/nikki.jpg"
+            },
+
+            {
+                titulo: "Telfone Preto",
+                imagem: "Imagens/telefone.jpg"
+            },
+
+            {
+                titulo: "Nós",
+                imagem: "Imagens/nos.jpg"
+            },
+
+            {
+                titulo: "Não, não olhe",
+                imagem: "Imagens/nao.jpg"
+            },
+
+            {
+                titulo: "Corra!",
+                imagem: "Imagens/corra.jpg"
+            },
+
+            {
+                titulo: "Não cabe :(",
+                imagem: "Imagens/vampiro.jpg"
+            },
+
+            {
+                titulo: "Clonaram Tyrone!",
+                imagem: "Imagens/tyrone.jpg"
+            },
+
+            {
+                titulo: "Ataque dos cães",
+                imagem: "Imagens/caes.jpg"
+            },
+
+            {
+                titulo: "Cidade de Deus",
+                imagem: "Imagens/cidade.jpg"
+            },
+
+            {
+                titulo: "Bacurau",
+                imagem: "Imagens/au.jpg"
+            },
+
+            {
+                titulo: "Questão de Honra",
+                imagem: "Imagens/honra.jpg"
+            },
+
+            {
+                titulo: "Bastardos Inglorios",
+                imagem: "Imagens/inglorios.jpg"
+            },
+
+            {
+                titulo: "Old Boy",
+                imagem: "Imagens/old.jpg"
+            },
+
+            {
+                titulo: "Clube da Luta",
+                imagem: "Imagens/sabao.jpg"
+            },
+
+            {
+                titulo: "A caçada",
+                imagem: "Imagens/cacada.jpg"
+            },
+
+            {
+                titulo: "Kill Bill Vol.1",
+                imagem: "Imagens/kill.jpg"
+            },
+
+            {
+                titulo: "Scarface",
+                imagem: "Imagens/scarface.jpg"
+            },
+
+            {
+                titulo: "SleepyHollow",
+                imagem: "Imagens/sleepyhollow.jpg"
+            },
+
+            {
+                
+                    titulo: "Tudo em todo lugar",
+                    imagem: "Imagens/tudo.jpg"
+                
+            },
+
+            {
+                titulo: "Parasita",
+                imagem: "Imagens/parasita.jpg"
+            },
+
+            {
+                titulo: "Sete crimes capitais",
+                imagem: "Imagens/sete.jpg"
+            }
+
+
+        ];
+
+        let indice = 0;
+        function atualizar(){
+            document.getElementById("titulo").textContent = filmes[indice].titulo;
+            document.getElementById("imagem").src = filmes[indice].imagem;
+        }
+
+        function proximo(){
+    indice++;
+
+    if(indice >= filmes.length){
+        indice = 0;
+    }
+
+    atualizar();
+}
+
+function anterior(){
+    indice--;
+
+    if(indice < 0){
+        indice = filmes.length - 1;
+    }
+
+    atualizar();
+}
+
+atualizar();
+
+
+        
+    </script>
+</body>
+</html>
